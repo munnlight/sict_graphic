@@ -9,7 +9,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 
 // Set clear color for the renderer
-renderer.setClearColor(0x000000);
+renderer.setClearColor(0x0000ca);
 
 // Set renderer size to match window size
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -37,6 +37,24 @@ const size = 100;
 const divisions = 100;
 const gridHelper = new THREE.GridHelper(size, divisions);
 scene.add(gridHelper);
+
+//
+const geometry = new THREE.BoxGeometry( 30, 0.1, 30); 
+const material = new THREE.MeshBasicMaterial( {color: 0xff8000, wireframe:false} ); 
+const cube = new THREE.Mesh( geometry, material ); 
+scene.add( cube );
+
+const geometryBlock = new THREE.BoxGeometry(1,10,30); 
+const materialBlock = new THREE.LineDashedMaterial( {
+	color: 0xffffff,
+	linewidth: 1,
+	scale: 1,
+	dashSize: 3,
+	gapSize: 1,
+} );
+const Block = new THREE.Mesh( geometryBlock, materialBlock ); 
+Block.position.set(-15,5,0);
+scene.add( Block );
 
 // Set initial camera position
 camera.position.z = 5;
