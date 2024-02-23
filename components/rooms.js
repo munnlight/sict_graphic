@@ -15,11 +15,11 @@ const rooms = (length, width, posx, posy) => {
     // comp.position.set(posx, posy, height);
     switch (i) {
       case 0:
-        comp.position.set(posx + length, posy + length / 2, height / 2);
+        comp.position.set(posx + width / 2, posy + length / 2, height / 2);
         comp.rotateZ(Math.PI / 2);
         break;
       case 1:
-        comp.position.set(posx - length, posy + length / 2, height / 2);
+        comp.position.set(posx - width / 2, posy + length / 2, height / 2);
         comp.rotateZ(Math.PI / 2);
         break;
       case 2:
