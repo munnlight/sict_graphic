@@ -1,6 +1,7 @@
 import * as THREE from "three";
+
+import { outerWall } from "./components/outerwall";
 import { rooms } from "./components/rooms";
-// import { dat } from "dat";
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xfffffff);
@@ -28,33 +29,12 @@ scene.add(Holog);
 // scene.add( pointLight );
 
 // Material class
-class Material {
-  box(x, y, z, col, posX, posY, posZ) {
-    const geometry = new THREE.BoxGeometry(x, y, z);
-    const material = new THREE.MeshBasicMaterial({
-      color: col,
-      wireframe: false,
-    });
-    const cube = new THREE.Mesh(geometry, material);
-    cube.position.set(posX, posY, posZ);
-    scene.add(cube);
-  }
-}
 
-// Classes function
+const outwall = outerWall;
+scene.add(outwall);
 
 const room1 = rooms(2, 4, 1, 0);
 scene.add(room1);
-
-const nuur = new Material().box(68.4, 1, 6.5, 0xffffff, -8.5, 7, 3.25);
-
-const ar = new Material().box(78.4, 1, 6.5, 0xffffff, 0, -7, 3.25);
-
-const hajuu1 = new Material().box(1, 44.2, 6.5, 0xffffff, 25.2, 29.5, 3.25);
-
-const hajuu2 = new Material().box(1, 55, 6.5, 0xffffff, 38.7, 20, 3.25);
-
-// const ar = nuur.clone();
 
 camera.position.set(0, 15, 15);
 camera.up = new THREE.Vector3(0, 0, 1);
