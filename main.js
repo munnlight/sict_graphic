@@ -1,28 +1,67 @@
 import * as THREE from "three";
-
-const constPos1 = 0;
-const constPos2 = 0;
-const constPos3 = 0;
+import { rooms } from "./components/rooms";
+// import { dat } from "dat";
 
 const scene = new THREE.Scene();
-
+scene.background = new THREE.Color(0xfffffff);
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
 );
-
 const renderer = new THREE.WebGLRenderer();
-
-renderer.setClearColor(0x0000ca);
-
 renderer.setSize(window.innerWidth, window.innerHeight);
-
 document.body.appendChild(renderer.domElement);
 
-const keyboard = {};
+const axesHelper = new THREE.AxesHelper(130);
+scene.add(axesHelper);
 
+var HologGeo = new THREE.BoxGeometry(110, 100, 0);
+var HologMat = new THREE.MeshLambertMaterial({ color: 0xff8800 });
+var Holog = new THREE.Mesh(HologGeo, HologMat);
+scene.add(Holog);
+
+// var pointColor = "#ffffff";
+// const pointLight = new THREE.PointLight( pointColor, 2.4, 200 );
+// pointLight.position.set( 15, 15, 15 );
+// scene.add( pointLight );
+
+// Material class
+class Material {
+  box(x, y, z, col, posX, posY, posZ) {
+    const geometry = new THREE.BoxGeometry(x, y, z);
+    const material = new THREE.MeshBasicMaterial({
+      color: col,
+      wireframe: false,
+    });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.set(posX, posY, posZ);
+    scene.add(cube);
+  }
+}
+
+// Classes function
+
+const room1 = rooms(2, 4, 1, 0);
+scene.add(room1);
+
+const nuur = new Material().box(68.4, 1, 6.5, 0xffffff, -8.5, 7, 3.25);
+
+const ar = new Material().box(78.4, 1, 6.5, 0xffffff, 0, -7, 3.25);
+
+const hajuu1 = new Material().box(1, 44.2, 6.5, 0xffffff, 25.2, 29.5, 3.25);
+
+const hajuu2 = new Material().box(1, 55, 6.5, 0xffffff, 38.7, 20, 3.25);
+
+// const ar = nuur.clone();
+
+camera.position.set(0, 15, 15);
+camera.up = new THREE.Vector3(0, 0, 1);
+camera.lookAt(new THREE.Vector3(1, 0, 1));
+
+// Keyboard controls
+const keyboard = {};
 document.addEventListener("keydown", (event) => {
   keyboard[event.key] = true;
 });
@@ -30,54 +69,8 @@ document.addEventListener("keyup", (event) => {
   keyboard[event.key] = false;
 });
 
-const axesHelper = new THREE.AxesHelper(5);
-scene.add(axesHelper);
-
-const size = 100;
-const divisions = 100;
-const gridHelper = new THREE.GridHelper(size, divisions);
-scene.add(gridHelper);
-
-// Wall Arrow function
-
-const walls = (length, width, pos1, pos2, scene) => {
-  const geometryBlock = new THREE.BoxGeometry(length, width, 1);
-  const materialBlock = new THREE.LineDashedMaterial({
-    color: 0xffffff,
-    linewidth: 1,
-    scale: 1,
-    dashSize: 3,
-    gapSize: 1,
-  });
-};
-
-const geometry = new THREE.BoxGeometry(30, 0.1, 30);
-const material = new THREE.MeshBasicMaterial({
-  color: 0xff8000,
-  wireframe: false,
-});
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
-
-const geometryBlock = new THREE.BoxGeometry(1, 10, 30);
-const materialBlock = new THREE.LineDashedMaterial({
-  color: 0xffffff,
-  linewidth: 1,
-  scale: 1,
-  dashSize: 3,
-  gapSize: 1,
-});
-const Block = new THREE.Mesh(geometryBlock, materialBlock);
-Block.position.set(-15, 5, 0);
-scene.add(Block);
-
-camera.position.z = 5;
-camera.position.y = 3;
-camera.position.x = 0;
-
 function animate() {
   requestAnimationFrame(animate);
-
   if (keyboard["ArrowUp"]) {
     camera.position.z -= 0.1;
   }
@@ -101,5 +94,4 @@ function animate() {
 
   renderer.render(scene, camera);
 }
-
 animate();
