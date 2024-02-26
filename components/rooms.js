@@ -8,7 +8,7 @@ const rooms = (length, width, posx, posy) => {
   const room = new THREE.Group();
 
   let constructor = length;
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 3; i++) {
     const wallWidth = 0.2;
     const geo = new THREE.BoxGeometry(constructor, wallWidth, height);
     const comp = new THREE.Mesh(geo, mat);
