@@ -20,4 +20,8 @@ function Stairs(){
     return combinedStairs;
 }
 
+// function handle(){
+    
+// }
+
 export{Stairs};
