@@ -18,7 +18,7 @@ document.body.appendChild(renderer.domElement);
 const axesHelper = new THREE.AxesHelper(130);
 scene.add(axesHelper);
 
-var HologGeo = new THREE.BoxGeometry(110, 100, 0);
+var HologGeo = new THREE.BoxGeometry(200, 150, 0);
 var HologMat = new THREE.MeshLambertMaterial({ color: 0xff8800 });
 var Holog = new THREE.Mesh(HologGeo, HologMat);
 scene.add(Holog);
@@ -29,7 +29,7 @@ scene.add(outwall);
 const combinedRooms = CombinedRooms();
 scene.add(combinedRooms);
 
-camera.position.set(0, 15, 15);
+camera.position.set(0, 15, 100);
 camera.up = new THREE.Vector3(0, 0, 1);
 camera.lookAt(new THREE.Vector3(1, 0, 1));
 

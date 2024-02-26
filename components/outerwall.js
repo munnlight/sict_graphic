@@ -19,10 +19,12 @@ const tBaruun = box(1, 9, 6.5, 0xeeeef, 5, 17, 3.25);
 const sh1 = box(15, 2, 0.5, 0x6f2c30, -2, 22.5, 0.25);
 const sh2 = box(15, 1.5, 0.5, 0x2c6f69, -2, 22.1, 0.75);
 
-const nuur = box(68.4, 1, 6.5, 0xffffff, -3.4, 12, 3.25);
-const ar = box(87.5, 1, 6.5, 0xffffff, 5.5, -12, 3.25);
+const nuur = box(129.75, 1, 6.5, 0xffffff, 0, 6, 3.25);
+const ar = box(152.15, 1, 6.5, 0xffffff, 11.2, -6, 3.25);
+
 const hajuu1 = box(1, 44.2, 6.5, 0xffffff, 31, 33.6, 3.25);
 const hajuu2 = box(1, 67.5, 6.5, 0xffffff, 48.7, 22.2, 3.25);
+
 const haah1 = box(1, 25, 6.5, 0xffffff, -38, 0, 3.25);
 const haah2 = box(18.5, 1, 6.5, 0xffffff, 39.65, 55.5, 3.25);
 
