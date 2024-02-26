@@ -45,22 +45,22 @@ document.addEventListener("keyup", (event) => {
 function animate() {
   requestAnimationFrame(animate);
   if (keyboard["ArrowUp"]) {
-    camera.position.z -= 0.1;
+    camera.position.z -= 0.4;
   }
   if (keyboard["ArrowDown"]) {
-    camera.position.z += 0.1;
+    camera.position.z += 0.4;
   }
   if (keyboard["ArrowLeft"]) {
-    camera.position.x -= 0.1;
+    camera.position.x -= 0.4;
   }
   if (keyboard["ArrowRight"]) {
-    camera.position.x += 0.1;
+    camera.position.x += 0.4;
   }
   if (keyboard["w"]) {
-    camera.position.y -= 0.1;
+    camera.position.y -= 0.4;
   }
   if (keyboard["s"]) {
-    camera.position.y += 0.1;
+    camera.position.y += 0.4;
   }
 
   camera.lookAt(scene.position);
