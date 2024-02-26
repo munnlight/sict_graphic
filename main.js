@@ -27,8 +27,8 @@ scene.add(Holog);
 const inwall = innerWall;
 scene.add(inwall);
 
-const combinedRooms = CombinedRooms();
-scene.add(combinedRooms);
+// const combinedRooms = CombinedRooms();
+// scene.add(combinedRooms);
 
 camera.position.set(0, 105, 115);
 camera.up = new THREE.Vector3(0, 0, 1);
@@ -46,22 +46,22 @@ document.addEventListener("keyup", (event) => {
 function animate() {
   requestAnimationFrame(animate);
   if (keyboard["ArrowUp"]) {
-    camera.position.z -= 1;
+    camera.position.z -= 2;
   }
   if (keyboard["ArrowDown"]) {
-    camera.position.z += 1;
+    camera.position.z += 2;
   }
   if (keyboard["ArrowLeft"]) {
-    camera.position.x -= 1;
+    camera.position.x -= 2;
   }
   if (keyboard["ArrowRight"]) {
-    camera.position.x += 1;
+    camera.position.x += 2;
   }
   if (keyboard["w"]) {
-    camera.position.y -= 1;
+    camera.position.y -= 2;
   }
   if (keyboard["s"]) {
-    camera.position.y += 1;
+    camera.position.y += 2;
   }
 
   camera.lookAt(scene.position);
