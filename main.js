@@ -12,7 +12,7 @@ const loader = new GLTFLoader();
 
 // Load a glTF resource using a relative path accessible from the web server
 loader.load(
-    'door22.glb', // or 'blender/untitled.glb' depending on your directory structure
+    'door.glb', // or 'blender/untitled.glb' depending on your directory structure
     function (gltf) {
         const model = gltf.scene;
 
