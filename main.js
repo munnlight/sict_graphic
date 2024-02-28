@@ -2,6 +2,10 @@ import * as THREE from "three";
 
 import { outerWall } from "./components/outerwall";
 import { CombinedRooms } from "./components/combined/coombineRooms";
+import { table } from "./components/table";
+import { chair } from "./components/chair";
+// import { computer } from "./components/computer";
+import { closet } from "./components/closet";
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff); // corrected line
@@ -19,17 +23,32 @@ const axesHelper = new THREE.AxesHelper(130);
 scene.add(axesHelper);
 
 var HologGeo = new THREE.BoxGeometry(200, 150, 0);
-var HologMat = new THREE.MeshLambertMaterial({ color: 0xff8800 });
+var HologMat = new THREE.MeshLambertMaterial({ color: 0x145a32 });
 var Holog = new THREE.Mesh(HologGeo, HologMat);
 scene.add(Holog);
 
-const outwall = outerWall;
-scene.add(outwall);
+// const outwall = outerWall;
+// scene.add(outwall);
 
-const combinedRooms = CombinedRooms();
-scene.add(combinedRooms);
+// const combinedRooms = CombinedRooms();
+// scene.add(combinedRooms);
 
-camera.position.set(0, 15, 100);
+// table
+// const tab = table;
+// tab.position.set(5, 0, 10);
+// scene.add(tab);
+
+// // chair
+// const chairs = chair;
+// chairs.position.set(5, 5, 10);
+// scene.add(chairs);
+
+// closet
+const clost = closet;
+clost.position.set(0, 0, 0);
+scene.add(clost);
+
+camera.position.set(20, 0, 18);
 camera.up = new THREE.Vector3(0, 0, 1);
 camera.lookAt(new THREE.Vector3(1, 0, 1));
 
