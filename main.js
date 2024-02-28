@@ -1,10 +1,11 @@
 import * as THREE from "three";
-import { CSG } from "three-js-csg";
 
 // import { outerWall } from "./components/outerwall";
-import { innerWall } from "./components/innerwall";
-import { CombinedRooms } from "./components/combined/coombineRooms";
+import { innerWall, height } from "./components/innerwall";
+import { Rooms } from "./components/rooms";
+// import { CombinedRooms } from "./components/combined/coombineRooms";
 
+console.log(height);
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff); // corrected line
 const camera = new THREE.PerspectiveCamera(
@@ -27,6 +28,9 @@ scene.add(Holog);
 
 const inwall = innerWall;
 scene.add(inwall);
+
+const rooms = Rooms;
+scene.add(rooms);
 
 // const combinedRooms = CombinedRooms();
 // scene.add(combinedRooms);

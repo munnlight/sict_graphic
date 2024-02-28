@@ -1,46 +1,71 @@
 import * as THREE from "three";
-import "./room.css";
-const height = 6.8;
+import {
+  height,
+  innerColor,
+  leftDist,
+  rightDist,
+  innerLeftX,
+  innerRightX,
+  box,
+} from "./innerwall";
 
-const rooms = (length, width, posx, posy) => {
-  console.log("object");
-  const matTrans = new THREE.MeshBasicMaterial({
-    color: 0x0f3042,
-    transparent: true,
-    opacity: 0.5,
-  });
+// const heightImp = height;
+const coloR = innerColor;
+
+// Өрөө 1 хэмжээ
+const room1len = 29.75;
+const room1right = 4.45;
+const room1left = 9.9;
+
+// Өрөө 2 хэмжээ
+// const room2len =
+
+const rooms = (length, dist, posx, posy) => {
   const room = new THREE.Group();
+  const mat = new THREE.MeshBasicMaterial({
+    color: coloR,
+    transparent: true,
+    opacity: 0.2,
+  });
+  const geo = new THREE.BoxGeometry(length, 1, height);
 
-  let constructor = length;
-  for (let i = 0; i < 3; i++) {
-    const wallWidth = 0.2;
-    const geo = new THREE.BoxGeometry(constructor, wallWidth, height);
-    const comp = new THREE.Mesh(geo, matTrans);
-    // comp.position.set(posx, posy, height);
-    switch (i) {
-      case 0:
-        comp.position.set(posx + width / 2, posy + length / 2, height / 2);
-        comp.rotateZ(Math.PI / 2);
-        break;
-      case 1:
-        comp.position.set(posx - width / 2, posy + length / 2, height / 2);
-        comp.rotateZ(Math.PI / 2);
-        break;
-      case 2:
-        comp.position.set(posx, posy, height / 2);
-        break;
-      case 3:
-        comp.position.set(posx, posy + length, height / 2);
-        break;
-    }
-    room.add(comp);
+  const comp1 = new THREE.Mesh(geo, mat);
+  const comp2 = new THREE.Mesh(geo, mat);
 
-    if (i >= 1) {
-      constructor = width;
-    }
-  }
+  comp1.position.set(posx, posy - 0.5, height / 2);
+  comp2.position.set(posx, posy + dist + 0.5, height / 2);
+
+  room.add(comp1);
+  room.add(comp2);
 
   return room;
 };
 
-export { rooms };
+// Өрөө 1-ийн хана
+const room1 = rooms(
+  room1len,
+  room1right + room1left,
+  innerRightX + 0.5 + room1len / 2,
+  rightDist - room1right
+);
+
+// Өрөө 2-ын хана
+// const room2 = rooms(
+
+// )
+
+// Хэмжээ шалгагч
+const checker = box(
+  room1len,
+  room1left * 2,
+  innerLeftX + 0.5 + room1len,
+  rightDist,
+  1,
+  0xff0000
+);
+
+const Rooms = new THREE.Group();
+Rooms.add(room1);
+
+// Rooms.add(checker);
+export { Rooms };
