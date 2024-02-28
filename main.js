@@ -1,6 +1,5 @@
 import * as THREE from "three";
 //import {CSG} from 'three-js-csg';
-
 // import { outerWall } from "./components/outerwall";
 import { innerWall } from "./components/innerwall";
 import { CombinedRooms } from "./components/combined/coombineRooms";
