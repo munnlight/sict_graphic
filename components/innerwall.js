@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import threeJsCsg, { CSG } from "three-js-csg";
 
 // Зарим тогтмол бөгөөд шаардлагатай хэмжээсүүдийг тогтмолоор хадгалав.
 
@@ -30,6 +29,10 @@ const left3_len = 37.1;
 // X тэнхлэгийн дагуух ханануудын байрлал
 const innerRightX = 88.625;
 const innerLeftX = 73.65;
+
+// Rooms.js рүү дамжуулах хувьсагчид
+const leftDist = -xLinear + leftGap + left1_len + stairGap + left2_len;
+const rightDist = -xLinear + right1_len;
 
 // Гол байгуулагч функц
 const box = (x, y, posx, posy, trans, col) => {
@@ -143,4 +146,13 @@ innerWall.add(doorR);
 innerWall.add(doorL);
 innerWall.add(stairL);
 
-export { innerWall };
+export {
+  box,
+  innerWall,
+  height,
+  innerColor,
+  leftDist,
+  rightDist,
+  innerRightX,
+  innerLeftX,
+};
