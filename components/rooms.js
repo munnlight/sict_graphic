@@ -41,16 +41,16 @@ const rooms = (length, dist, posx, posy) => {
 const room1 = rooms(room1len, room1wid, innerRightX + 0.5 + room1len / 2, rightDist - room1right);
 
 // Өрөө 2-ын хана
-const room2 = rooms(room2len, room2wid, innerLeftX - 0.5 - room2len / 2, leftDist - room1left);
-
-// Хэмжээ шалгагч
-const checkerR = box(room1len, room1left * 2, innerRightX + room1len / 2 + 0.5, rightDist + door_len, 1, 0xff0000);
-const checkerL = box(room2len, room2left * 2, innerLeftX - room2len / 2 - 0.5, leftDist + door_len, 1, 0xff0000);
+const room2 = rooms(room2len, room2wid, innerLeftX - 0.5 - room2len / 2, leftDist - room2left);
 
 const Rooms = new THREE.Group();
 Rooms.add(room1);
 Rooms.add(room2);
 
+// Хэмжээ шалгагч
+// const checkerR = box(room1len, room1left * 2, innerRightX + room1len / 2 + 0.5, rightDist + door_len, 1, 0xff0000);
+// const checkerL = box(room2len, room2left * 2, innerLeftX - room2len / 2 - 0.5, leftDist, 1, 0xff0000);
 // Rooms.add(checkerR);
 // Rooms.add(checkerL);
-export { Rooms };
+
+export { Rooms, rooms };
