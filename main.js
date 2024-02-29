@@ -5,6 +5,12 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 //import { outerWall } from "./components/outerwall";
 import { innerWall} from "./components/innerwall";
 import { doorGroup } from "./components/door";
+import "./style.css";
+// import { outerWall } from "./components/outerwall";
+import { innerWall, height } from "./components/innerwall";
+import { Rooms } from "./components/rooms";
+// import { CombinedRooms } from "./components/combined/coombineRooms";
+import { combinedStairs  } from "./components/stairs";
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000); // corrected line
@@ -85,6 +91,15 @@ scene.add(inwall);
 //const combinedRooms = CombinedRooms();
 //scene.add(combinedRooms);
 
+const stairs = combinedStairs;
+stairs.position.set(65.725, 51.85, 0.375);
+scene.add(stairs);
+
+const rooms = Rooms;
+scene.add(rooms);
+
+// const combinedRooms = CombinedRooms();
+// scene.add(combinedRooms);
 camera.position.set(0, 105, 115);
 camera.up = new THREE.Vector3(0, 0, 1);
 // camera.lookAt(new THREE.Vector3(1, 0, 1));
