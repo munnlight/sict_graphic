@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { rooms} from './rooms';
+import { rooms} from  "./rooms";
 const widthOfEach = 1.6;
 const heigth = 0.75;
 const length = 6.8;
