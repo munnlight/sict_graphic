@@ -4,14 +4,18 @@ const height = 6.8;
 
 const rooms = (length, width, posx, posy) => {
   console.log("object");
-  const mat = new THREE.MeshBasicMaterial({ color: 0x0f3042 });
+  const matTrans = new THREE.MeshBasicMaterial({
+    color: 0x0f3042,
+    transparent: true,
+    opacity: 0.5,
+  });
   const room = new THREE.Group();
 
   let constructor = length;
   for (let i = 0; i < 3; i++) {
     const wallWidth = 0.2;
     const geo = new THREE.BoxGeometry(constructor, wallWidth, height);
-    const comp = new THREE.Mesh(geo, mat);
+    const comp = new THREE.Mesh(geo, matTrans);
     // comp.position.set(posx, posy, height);
     switch (i) {
       case 0:
