@@ -7,6 +7,7 @@ import {
   innerLeftX,
   innerRightX,
   box,
+  door_len,
 } from "./innerwall";
 
 // const heightImp = height;
@@ -18,7 +19,7 @@ const room1right = 4.45;
 const room1left = 9.9;
 
 // Өрөө 2 хэмжээ
-// const room2len =
+const room2len = 58.5;
 
 const rooms = (length, dist, posx, posy) => {
   const room = new THREE.Group();
@@ -33,7 +34,7 @@ const rooms = (length, dist, posx, posy) => {
   const comp2 = new THREE.Mesh(geo, mat);
 
   comp1.position.set(posx, posy - 0.5, height / 2);
-  comp2.position.set(posx, posy + dist + 0.5, height / 2);
+  comp2.position.set(posx, posy + dist + 0.5 + door_len, height / 2);
 
   room.add(comp1);
   room.add(comp2);

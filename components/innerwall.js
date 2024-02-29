@@ -155,4 +155,5 @@ export {
   rightDist,
   innerRightX,
   innerLeftX,
+  door_len,
 };

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import "./style.css";
 // import { outerWall } from "./components/outerwall";
 import { innerWall, height } from "./components/innerwall";
 import { Rooms } from "./components/rooms";
