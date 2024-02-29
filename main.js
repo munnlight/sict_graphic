@@ -1,7 +1,11 @@
 import * as THREE from "three";
-import { innerWall } from "./components/innerwall";
-import { combinedStairs } from "./components/stairs";
+// import { outerWall } from "./components/outerwall";
+import { innerWall, height } from "./components/innerwall";
+import { Rooms } from "./components/rooms";
+// import { CombinedRooms } from "./components/combined/coombineRooms";
+import { combinedStairs  } from "./components/stairs";
 
+console.log(height);
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff); // corrected line
 const camera = new THREE.PerspectiveCamera(
@@ -26,8 +30,11 @@ const inwall = innerWall;
 scene.add(inwall);
 
 const stairs = combinedStairs;
-stairs.position.set(0, 100, 100);
+stairs.position.set(65.725, 51.85, 0.375);
 scene.add(stairs);
+
+const rooms = Rooms;
+scene.add(rooms);
 
 // const combinedRooms = CombinedRooms();
 // scene.add(combinedRooms);
