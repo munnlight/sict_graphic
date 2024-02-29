@@ -1,6 +1,4 @@
 import * as THREE from "three";
-import threeJsCsg, { CSG } from "three-js-csg";
-
 // Зарим тогтмол бөгөөд шаардлагатай хэмжээсүүдийг тогтмолоор хадгалав.
 
 const height = 15;

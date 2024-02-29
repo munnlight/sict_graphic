@@ -1,8 +1,6 @@
 import * as THREE from "three";
-//import {CSG} from 'three-js-csg';
-// import { outerWall } from "./components/outerwall";
 import { innerWall } from "./components/innerwall";
-import { CombinedRooms } from "./components/combined/coombineRooms";
+import { combinedStairs } from "./components/stairs";
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff); // corrected line
@@ -26,6 +24,10 @@ scene.add(Holog);
 
 const inwall = innerWall;
 scene.add(inwall);
+
+const stairs = combinedStairs;
+stairs.position.set(0, 100, 100);
+scene.add(stairs);
 
 // const combinedRooms = CombinedRooms();
 // scene.add(combinedRooms);
