@@ -20,9 +20,6 @@ scene.add(door1);
 const inwall = innerWall;
 scene.add(inwall);
 
-//const combinedRooms = CombinedRooms();
-//scene.add(combinedRooms);
-
 const stairs = combinedStairs;
 stairs.position.set(65.725, 51.85, 0.375);
 scene.add(stairs);
