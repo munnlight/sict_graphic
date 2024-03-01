@@ -1,5 +1,4 @@
 import * as THREE from "three";
-//import { scene } from "./components/outside";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 function loadGLTFModel(filePath, position, rotation, scale) {
     const haalga = new THREE.Group();
