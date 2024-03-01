@@ -296,9 +296,6 @@ loader.load(
     closet.add(mesh); // Add the image as part of the group
   },
   undefined
-  // function (error) {
-  //   console.error("An error happened while loading the image:", error);
-  // }
 );
 
 export { closet };
