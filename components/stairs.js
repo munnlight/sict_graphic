@@ -55,7 +55,7 @@ const handle = (situation, h, radius, colmnNum, handleLen) => {
 const steps = (width, posX, posY, posZ) => {
   const lowerStep = new THREE.BoxGeometry(width, length, heigth);
   const meshStep = new THREE.Mesh(lowerStep, new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: false }));
-  meshStep.position.set(posX, posY, posZ);
+  meshStep.position.set(posX, posY, posZ + 0.5);
 
   return meshStep;
 };
@@ -67,7 +67,7 @@ function Stairs() {
   var rightStairs = new THREE.Group();
   for (var i = 0; i < 10; i++) {
     var legsMesh = new THREE.Mesh(legs, new THREE.MeshBasicMaterial({ color: 0xffffff }));
-    legsMesh.position.set(-i * widthOfEach, 0, heigth * i);
+    legsMesh.position.set(-i * widthOfEach, 0, heigth * i + 0.5);
     rightStairs.add(legsMesh);
   }
   var leftStairs = rightStairs.clone();
