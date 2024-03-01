@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { CSG } from "three-js-csg";
+// import { CSG } from "three-js-csg";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 //import { outerWall } from "./components/outerwall";
@@ -7,7 +7,7 @@ import { innerWall} from "./components/innerwall";
 import { doorGroup } from "./components/door";
 import "./style.css";
 // import { outerWall } from "./components/outerwall";
-import { innerWall, height } from "./components/innerwall";
+//import { innerWall, height } from "./components/innerwall";
 import { Rooms } from "./components/rooms";
 // import { CombinedRooms } from "./components/combined/coombineRooms";
 import { combinedStairs  } from "./components/stairs";
@@ -26,9 +26,11 @@ var HologGeo = new THREE.BoxGeometry(110, 100, 0);
 var HologMat = new THREE.MeshLambertMaterial({ color: 0xff8800 });
 var Holog = new THREE.Mesh(HologGeo, HologMat);
 scene.add(Holog);
-/*
+
 
 function loadGLTFModel(filePath, position, rotation, scale) {
+  const haalga = new THREE.Group();
+
   const loader = new GLTFLoader();
   loader.load(
       filePath,
@@ -60,7 +62,7 @@ function loadGLTFModel(filePath, position, rotation, scale) {
               model.scale.set(scale.x || 1, scale.y || 1, scale.z || 1);
           }
 
-          scene.add(model);
+          haalga.add(model);
       },
       function (xhr) {
           console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -68,14 +70,18 @@ function loadGLTFModel(filePath, position, rotation, scale) {
       function (error) {
           console.log('An error happened', error);
       }
+
   );
+  return haalga;
 }
 
-const door = loadGLTFModel('door(2).glb', { x: 48, y: 152.9, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 4, y: 4, z: 4 });
-loadGLTFModel('door(2).glb', { x: 45, y: 90, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 4, y: 4, z: 4 });
-*/
-const doors = doorGroup;
-
+const leftdoor = loadGLTFModel('door(2).glb', { x: -99.5, y: -174.5, z: 4.3 }, { x: Math.PI/2, y: Math.PI/2, }, { x: 4, y: 4, z: 4 });
+const rightdoor = loadGLTFModel('door(2).glb', { x: 64.5, y: 113.8, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 4, y: 4, z: 4 });
+leftdoor.rotateZ(Math.PI);
+scene.add(leftdoor);
+scene.add(rightdoor);
+//const doors = doorGroup;
+//scene.add(doors);
 
 const light = new THREE.DirectionalLight(0xffffff,5);
 light.position.set(5,5,5);

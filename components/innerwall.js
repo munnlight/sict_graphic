@@ -108,7 +108,7 @@ innerWall.add(innerLeft2);
 innerWall.add(innerLeft3);
 
 innerWall.add(doorR);
-innerWall.add(doorL);
+//innerWall.add(doorL);
 innerWall.add(stairL);
 
 export { box, innerWall, height, innerColor, leftDist, rightDist, innerRightX, innerLeftX, door_len };
