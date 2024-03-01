@@ -1,13 +1,13 @@
 import * as THREE from "three";
-import { CSG } from "three-js-csg";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+// import { CSG } from "three-js-csg";
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 //import { outerWall } from "./components/outerwall";
 import { innerWall} from "./components/innerwall";
 import { doorGroup } from "./components/door";
 import "./style.css";
 // import { outerWall } from "./components/outerwall";
-import { innerWall, height } from "./components/innerwall";
+//import { innerWall, height } from "./components/innerwall";
 import { Rooms } from "./components/rooms";
 // import { CombinedRooms } from "./components/combined/coombineRooms";
 import { combinedStairs  } from "./components/stairs";
