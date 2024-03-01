@@ -225,8 +225,33 @@ gol1.position.set(1.6, 10, 6.5);
 const gol2 = new Operants().trophy3(0xffb404);
 gol2.position.set(1.6, -10, 6.5);
 
-const closet = new THREE.Group();
+// const loader = new THREE.TextureLoader();
 
+// // Load the image asynchronously
+// loader.load(
+//   "sictImg.jpg",
+
+//   // onLoad callback
+//   function (texture) {
+//     const material = new THREE.MeshBasicMaterial({ map: texture });
+//     const plane = new THREE.PlaneGeometry(
+//       texture.image.width / 10,
+//       texture.image.height / 10
+//     );
+//     const mesh = new THREE.Mesh(plane, material);
+//     mesh.position.set(1.6, -10, 6.5); // Adjust position as needed
+//     closet.add(mesh); // Add the image as part of the group
+//   },
+
+//   // onProgress callback currently not supported
+//   undefined,
+
+//   // onError callback
+//   function (error) {
+//     console.error("An error happened while loading the image:", error);
+//   }
+// );
+const closet = new THREE.Group();
 closet.add(trophy1);
 closet.add(trophy2);
 closet.add(trophy3);
@@ -254,5 +279,26 @@ closet.add(orgomjlol1);
 closet.add(orgomjlol2);
 closet.add(orgomjlol3);
 closet.add(orgomjlol4);
+
+const loader = new THREE.TextureLoader();
+loader.load(
+  "./sictImg.jpg",
+  function (texture) {
+    console.log("Image loaded successfully:", texture);
+
+    const material = new THREE.MeshBasicMaterial({ map: texture });
+    const plane = new THREE.PlaneGeometry(
+      texture.image.width / 10,
+      texture.image.height / 10
+    );
+    const mesh = new THREE.Mesh(plane, material);
+    mesh.position.set(1, 1, 3); // Adjust position as needed
+    closet.add(mesh); // Add the image as part of the group
+  },
+  undefined
+  // function (error) {
+  //   console.error("An error happened while loading the image:", error);
+  // }
+);
 
 export { closet };

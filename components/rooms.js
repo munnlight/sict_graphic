@@ -1,24 +1,20 @@
 import * as THREE from "three";
-import {
-  height,
-  innerColor,
-  leftDist,
-  rightDist,
-  innerLeftX,
-  innerRightX,
-  box,
-} from "./innerwall";
+import { height, innerColor, leftDist, rightDist, innerLeftX, innerRightX, box, door_len } from "./innerwall";
 
 // const heightImp = height;
 const coloR = innerColor;
 
 // Өрөө 1 хэмжээ
 const room1len = 29.75;
-const room1right = 4.45;
-const room1left = 9.9;
+const room1right = 5.7;
+const room1left = 3.75;
+const room1wid = room1right + door_len + room1left;
 
 // Өрөө 2 хэмжээ
-// const room2len =
+const room2len = 58.5;
+const room2right = 5.1;
+const room2left = 18.2;
+const room2wid = 27.75;
 
 const rooms = (length, dist, posx, posy) => {
   const room = new THREE.Group();
@@ -42,30 +38,19 @@ const rooms = (length, dist, posx, posy) => {
 };
 
 // Өрөө 1-ийн хана
-const room1 = rooms(
-  room1len,
-  room1right + room1left,
-  innerRightX + 0.5 + room1len / 2,
-  rightDist - room1right
-);
+const room1 = rooms(room1len, room1wid, innerRightX + 0.5 + room1len / 2, rightDist - room1right);
 
 // Өрөө 2-ын хана
-// const room2 = rooms(
-
-// )
-
-// Хэмжээ шалгагч
-const checker = box(
-  room1len,
-  room1left * 2,
-  innerLeftX + 0.5 + room1len,
-  rightDist,
-  1,
-  0xff0000
-);
+const room2 = rooms(room2len, room2wid, innerLeftX - 0.5 - room2len / 2, leftDist - room2left);
 
 const Rooms = new THREE.Group();
 Rooms.add(room1);
+Rooms.add(room2);
 
-// Rooms.add(checker);
-export { Rooms };
+// Хэмжээ шалгагч
+// const checkerR = box(room1len, room1left * 2, innerRightX + room1len / 2 + 0.5, rightDist + door_len, 1, 0xff0000);
+// const checkerL = box(room2len, room2left * 2, innerLeftX - room2len / 2 - 0.5, leftDist, 1, 0xff0000);
+// Rooms.add(checkerR);
+// Rooms.add(checkerL);
+
+export { Rooms, rooms };
