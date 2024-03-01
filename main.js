@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { scene } from "./components/outside";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { innerWall } from "./components/innerwall";
-// import { outerWall } from "./components/outerwall";
+import { outerWall } from "./components/outerwall";
 import { Rooms } from "./components/rooms";
 import { combinedStairs } from "./components/stairs";
 import { animate } from "./components/animation";
@@ -34,5 +34,8 @@ const door2 = loadGLTFModel(
   { x: 4, y: 4, z: 4 }
 );
 scene.add(door2);
+
+const outwall = outerWall;
+scene.add(outwall);
 
 animate();
