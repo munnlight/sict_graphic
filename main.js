@@ -20,6 +20,9 @@ scene.add(door1);
 const inwall = innerWall;
 scene.add(inwall);
 
+//const combinedRooms = CombinedRooms();
+//scene.add(combinedRooms);
+
 const stairs = combinedStairs;
 stairs.position.set(65.725, 51.85, 0.375);
 scene.add(stairs);
@@ -29,7 +32,7 @@ scene.add(rooms);
 
 const door2 = loadGLTFModel(
   "./door(2).glb",
-  { x: 45, y: 90, z: 4.3 },
+  { x: 63, y: 113.5, z: 4.3 },
   { x: Math.PI / 2, y: Math.PI / 2 },
   { x: 4, y: 4, z: 4 }
 );
