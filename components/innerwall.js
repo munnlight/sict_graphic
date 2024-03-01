@@ -1,4 +1,5 @@
 import * as THREE from "three";
+// import { room1len, room2len } from "./rooms";
 // Зарим тогтмол бөгөөд шаардлагатай хэмжээсүүдийг тогтмолоор хадгалав.
 
 const height = 15;
@@ -12,6 +13,7 @@ const col3 = "#093982";
 
 // X тэнхлэгийн дагуу зарим зөөлтөд шаардагдав.
 const xLinear = 6;
+const xRoomW = 30;
 
 const right1_len = 127;
 const right2_len = 77.2;
@@ -32,6 +34,12 @@ const innerLeftX = 73.65;
 // Rooms.js рүү дамжуулах хувьсагчид
 const leftDist = -xLinear + leftGap + left1_len + stairGap + left2_len;
 const rightDist = -xLinear + right1_len;
+
+// outerwall.js рүү дамжуулах хувьсагчид
+const oRightLen = right1_len + right2_len + door_len + 2 * xLinear + xRoomW;
+const oLeft1len = left3_len + door_len + left2_len + stairGap;
+const oLeft1Y = -xLinear + leftGap + left1_len;
+// const oFront1len = room1len + innerRightX - innerLeftX + room2len;
 
 // Гол байгуулагч функц
 const box = (x, y, posx, posy, trans, col) => {
