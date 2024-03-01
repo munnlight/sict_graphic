@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import { room1len, room2len } from "./rooms";
+
 // Зарим тогтмол бөгөөд шаардлагатай хэмжээсүүдийг тогтмолоор хадгалав.
 
 const height = 15;
@@ -12,6 +14,7 @@ const col3 = "#093982";
 
 // X тэнхлэгийн дагуу зарим зөөлтөд шаардагдав.
 const xLinear = 6;
+const xRoomW = 6;
 
 const right1_len = 127;
 const right2_len = 77.2;
@@ -32,6 +35,11 @@ const innerLeftX = 73.65;
 // Rooms.js рүү дамжуулах хувьсагчид
 const leftDist = -xLinear + leftGap + left1_len + stairGap + left2_len;
 const rightDist = -xLinear + right1_len;
+
+// outerwall.js рүү дамжуулах хувьсагчид
+const oRightLen = right1_len + right2_len + door_len + xLinear + xRoomW;
+const oFront1len = room1len + innerRightX - innerLeftX + room2len;
+
 
 // Гол байгуулагч функц
 const box = (x, y, posx, posy, trans, col) => {
@@ -61,6 +69,8 @@ const doorL = box(
 );
 
 const stairL = box(1, stairGap, innerLeftX, leftGap - xLinear + left1_len + stairGap / 2, noTrans, col3);
+
+
 
 // Хөндлөн коридорын элементүүд
 
@@ -111,4 +121,4 @@ innerWall.add(doorR);
 //innerWall.add(doorL);
 innerWall.add(stairL);
 
-export { box, innerWall, height, innerColor, leftDist, rightDist, innerRightX, innerLeftX, door_len };
+export { box, innerWall, innerColor, height, leftDist, rightDist, innerRightX, innerLeftX, door_len };

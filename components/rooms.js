@@ -11,10 +11,10 @@ const room1left = 3.75;
 const room1wid = room1right + door_len + room1left;
 
 // Өрөө 2 хэмжээ
-const room2len = 27.75;
+const room2len = 58.5;
 const room2right = 5.1;
-const room2wid = 58.5;
-const room2left = room2wid - door_len - room2right;
+const room2left = 18.2;
+const room2wid = 27.75;
 
 const rooms = (length, dist, posx, posy) => {
   const room = new THREE.Group();
@@ -53,4 +53,4 @@ Rooms.add(room2);
 // Rooms.add(checkerR);
 // Rooms.add(checkerL);
 
-export { Rooms, rooms };
+export { Rooms, rooms, room1len, room2len };
