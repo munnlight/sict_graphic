@@ -52,9 +52,4 @@ Rooms.add(room2);
 // const checkerL = box(room2len, room2left * 2, innerLeftX - room2len / 2 - 0.5, leftDist, 1, 0xff0000);
 // Rooms.add(checkerR);
 // Rooms.add(checkerL);
-<<<<<<< HEAD
 export { Rooms,rooms };
-=======
-
-export { Rooms, rooms };
->>>>>>> 6b173f15f76bab2bc2247201b20cf3d3ebf2272a
