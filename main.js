@@ -11,10 +11,11 @@ import { loadGLTFModel } from "./components/door";
 
 const door1 = loadGLTFModel(
   "./door(2).glb",
-  { x: 48, y: 152.9, z: 4.3 },
+  { x: -99, y: -171, z: 4.3 },
   { x: Math.PI / 2, y: Math.PI / 2 },
-  { x: 4, y: 4, z: 4 }
+  { x: 3, y: 4, z: 4 }
 );
+door1.rotateZ(Math.PI);
 scene.add(door1);
 
 const inwall = innerWall;
@@ -32,9 +33,9 @@ scene.add(rooms);
 
 const door2 = loadGLTFModel(
   "./door(2).glb",
-  { x: 63, y: 113.5, z: 4.3 },
+  { x: 63.3, y: 115.5, z: 4.3 },
   { x: Math.PI / 2, y: Math.PI / 2 },
-  { x: 4, y: 4, z: 4 }
+  { x: 3, y: 4, z: 4 }
 );
 scene.add(door2);
 
