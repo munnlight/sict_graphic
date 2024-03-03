@@ -3,23 +3,17 @@ import * as THREE from "three";
 import { scene } from "./components/outside";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { innerWall } from "./components/innerwall";
-// import { outerWall } from "./components/outerwall";
+//import { outerWall } from "./components/outerwall";
 import { Rooms } from "./components/rooms";
-import { combinedStairs } from "./components/stairs";
+import { Stairs } from "./components/stairs";
 import { animate } from "./components/animation";
-import { loadGLTFModel } from "./components/door";
+import {  floor1, floor2 } from "./components/floor";
 
-const door1 = loadGLTFModel(
-  "./door(2).glb",
-  { x: -99, y: -171, z: 4.3 },
-  { x: Math.PI / 2, y: Math.PI / 2 },
-  { x: 3, y: 4, z: 4 }
-);
-door1.rotateZ(Math.PI);
-scene.add(door1);
+const fl1 = floor1;
+const fl2 = floor2;
 
-const inwall = innerWall;
-scene.add(inwall);
+scene.add(fl1);
+scene.add(fl2);
 
 //const combinedRooms = CombinedRooms();
 //scene.add(combinedRooms);
@@ -30,6 +24,15 @@ scene.add(stairs);
 
 const rooms = Rooms;
 scene.add(rooms);
+/*
+const door1 = loadGLTFModel(
+  "./door(2).glb",
+  { x: -99, y: -171, z: 4.3 },
+  { x: Math.PI / 2, y: Math.PI / 2 },
+  { x: 3, y: 4, z: 4 }
+);
+door1.rotateZ(Math.PI);
+scene.add(door1);
 
 const door2 = loadGLTFModel(
   "./door(2).glb",
@@ -37,6 +40,6 @@ const door2 = loadGLTFModel(
   { x: Math.PI / 2, y: Math.PI / 2 },
   { x: 3, y: 4, z: 4 }
 );
-scene.add(door2);
+scene.add(door2);*/
 
 animate();
