@@ -53,4 +53,8 @@ Rooms.add(room2);
 // Rooms.add(checkerR);
 // Rooms.add(checkerL);
 
+<<<<<<< HEAD
 export { Rooms, rooms };
+=======
+export { Rooms, rooms, room1len, room2len };
+>>>>>>> 0b7904a5b987d8cbd688f2c24ee94fcbe2a80b28

@@ -17,34 +17,50 @@ const radian = 180 / Math.PI;
 camera.lookAt(scene.position);
 function animate() {
   requestAnimationFrame(animate);
-  console.log(camera.rotation.x);
+
+  // if (keyboard["ArrowUp"]) {
+  //   camera.position.y += camera.rotation.x * Math.cos(camera.rotation.y);
+  //   camera.position.x += camera.rotation.x * Math.sin(camera.rotation.y);
+  // }
+  // if (keyboard["ArrowDown"]) {
+  //   camera.position.y -= camera.rotation.x * Math.cos(camera.rotation.y);
+  //   camera.position.x -= camera.rotation.x * Math.sin(camera.rotation.y);
+  // }
+  // if (keyboard["ArrowLeft"]) {
+  //   camera.rotateY(Math.PI / 180);
+  // }
+  // if (keyboard["ArrowRight"]) {
+  //   camera.rotateY(-Math.PI / 180);
+  // }
+  // if (keyboard["w"]) {
+  //   camera.position.z += 1;
+  // }
+  // if (keyboard["s"]) {
+  //   camera.position.z -= 1;
+  // }
+
   if (keyboard["ArrowUp"]) {
-    camera.position.y += camera.rotation.x * Math.cos(camera.rotation.y);
-    camera.position.x += camera.rotation.x * Math.sin(camera.rotation.y);
+    camera.position.z -= 4;
   }
   if (keyboard["ArrowDown"]) {
-    camera.position.y -= camera.rotation.x * Math.cos(camera.rotation.y);
-    camera.position.x -= camera.rotation.x * Math.sin(camera.rotation.y);
+    camera.position.z += 4;
   }
   if (keyboard["ArrowLeft"]) {
-    camera.rotateY(Math.PI / 180);
+    camera.position.x -= 4;
   }
   if (keyboard["ArrowRight"]) {
-    camera.rotateY(-Math.PI / 180);
+    camera.position.x += 4;
   }
   if (keyboard["w"]) {
-    camera.position.z += 0.5;
+    camera.position.y -= 4;
   }
   if (keyboard["s"]) {
-    camera.position.z -= 0.5;
+    camera.position.y += 4;
   }
+
+  camera.lookAt(scene.position);
+
   renderer.render(scene, camera);
-  // var direction = new THREE.Vector3(0, 0, -1);
-  // direction.applyQuaternion(camera.quaternion);
-  // // Scale the direction vector by the distance to move
-  // direction.multiplyScalar(1);
-  // // Move the camera along the direction vector
-  // camera.position.add(direction);
 }
 
 animate();
