@@ -45,7 +45,8 @@ const chr = chair;
 scene.add(chr);
 
 const clost = closet;
-clost.position.set(30, 140, 50);
+clost.rotation.z = Math.PI / 2;
+clost.position.set(0, 60, 0);
 scene.add(clost);
 
 const door2 = loadGLTFModel(

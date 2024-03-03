@@ -56,4 +56,11 @@ for (let i = 0; i < 4; i++) {
   chair.add(ch1);
 }
 
+for (let i = 0; i < 2; i++) {
+  const ch2 = chairs();
+  ch2.rotation.z = Math.PI / -2;
+  ch2.position.set(105.5 + 8.5 * i, 129, 0);
+  chair.add(ch2);
+}
+
 export { chair };

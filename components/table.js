@@ -104,4 +104,12 @@ for (let i = 0; i < 2; i++) {
   table.add(t2);
 }
 
+// jijig oroo
+for (let i = 0; i < 2; i++) {
+  const t = tables();
+  t.rotation.z = Math.PI / -2;
+  t.position.set(105.5 + 8.5 * i, 127, 0);
+  table.add(t);
+}
+
 export { table };

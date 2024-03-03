@@ -1,5 +1,6 @@
-  /*import * as THREE from "three";
+import * as THREE from "three";
 
+<<<<<<< HEAD
   const height = 15;
   const wallTrans = 0.5;
   const noTrans = 1;
@@ -60,3 +61,6 @@ const outerRight = box(1, 243.55);
     outerWall.add(insideRight);
 
     export { outerWall };*/
+=======
+export { outerWall };
+>>>>>>> 714f603e00bc48eca6830aba7a1b3a3168a38abf

@@ -225,33 +225,36 @@ gol1.position.set(1.6, 10, 6.5);
 const gol2 = new Operants().trophy3(0xffb404);
 gol2.position.set(1.6, -10, 6.5);
 
-// const loader = new THREE.TextureLoader();
+// Define the function to load textures
+const loadTextures = () => {
+  const closet = new THREE.Group();
 
-// // Load the image asynchronously
-// loader.load(
-//   "sictImg.jpg",
+  const textureLoader = new THREE.TextureLoader();
 
-//   // onLoad callback
-//   function (texture) {
-//     const material = new THREE.MeshBasicMaterial({ map: texture });
-//     const plane = new THREE.PlaneGeometry(
-//       texture.image.width / 10,
-//       texture.image.height / 10
-//     );
-//     const mesh = new THREE.Mesh(plane, material);
-//     mesh.position.set(1.6, -10, 6.5); // Adjust position as needed
-//     closet.add(mesh); // Add the image as part of the group
-//   },
+  // Load the first texture
+  textureLoader.load("./sictImg.jpg", function (texture1) {
+    const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+    const planeGeometry1 = new THREE.PlaneGeometry(2, 2);
+    const mesh1 = new THREE.Mesh(planeGeometry1, material1);
+    mesh1.position.z = 20;
+    closet.add(mesh1);
+  });
 
-//   // onProgress callback currently not supported
-//   undefined,
+  // Load the second texture
+  textureLoader.load("images.png", function (texture2) {
+    const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
+    const planeGeometry2 = new THREE.PlaneGeometry(2, 2);
+    const mesh2 = new THREE.Mesh(planeGeometry2, material2);
+    mesh2.position.z = 20;
+    closet.add(mesh2);
+  });
 
-//   // onError callback
-//   function (error) {
-//     console.error("An error happened while loading the image:", error);
-//   }
-// );
-const closet = new THREE.Group();
+  return closet;
+};
+
+const closet = loadTextures();
+
+//const closet = new THREE.Group();
 closet.add(trophy1);
 closet.add(trophy2);
 closet.add(trophy3);
@@ -280,22 +283,16 @@ closet.add(orgomjlol2);
 closet.add(orgomjlol3);
 closet.add(orgomjlol4);
 
-const loader = new THREE.TextureLoader();
-loader.load(
-  "./sictImg.jpg",
-  function (texture) {
-    console.log("Image loaded successfully:", texture);
+// const loader = new THREE.TextureLoader();
+// loader.load("./images.png", function (texture) {
+//   const material = new THREE.MeshBasicMaterial({ map: texture });
 
-    const material = new THREE.MeshBasicMaterial({ map: texture });
-    const plane = new THREE.PlaneGeometry(
-      texture.image.width / 10,
-      texture.image.height / 10
-    );
-    const mesh = new THREE.Mesh(plane, material);
-    mesh.position.set(1, 1, 3); // Adjust position as needed
-    closet.add(mesh); // Add the image as part of the group
-  },
-  undefined
-);
+//   const planeGeometry = new THREE.PlaneGeometry(2, 2);
+
+//   const mesh = new THREE.Mesh(planeGeometry, material);
+//   mesh.position.z = 20;
+
+//   closet.add(mesh);
+// });
 
 export { closet };
