@@ -1,5 +1,14 @@
 import * as THREE from "three";
-import { innerRightX, oLeft1len, oLeft1Y, oRightLen, xLinear, xRoomW, innerLeftX, rightDist } from "./innerwall";
+import {
+  innerRightX,
+  oLeft1len,
+  oLeft1Y,
+  oRightLen,
+  xLinear,
+  xRoomW,
+  innerLeftX,
+  rightDist,
+} from "./innerwall";
 import { room1len, room2len } from "./rooms";
 
 // Хануудын урт
@@ -31,10 +40,38 @@ const wall = (x, y, posx, posy, trans, col) => {
 };
 
 // Хананууд
-const oRight = wall(1, oRightLen, innerRightX + room1len, oRightLen / 2 - moveBack, transBack, col1);
-const oFront1 = wall(oFront1len, 1, innerRightX + room1len - oFront1len / 2, oRightLen - moveBack, transBack, col1);
-const oLeft1 = wall(1, oLeft1len, innerLeftX - room2len - 1.5, oLeft1Y + oLeft1len / 2, transBack, col2);
-const oFront2 = wall(oFront2len + 3, 1, innerLeftX - room2len - oFront2len / 2 - 3, 47.8 - 6, transBack, col2);
+const oRight = wall(
+  1,
+  oRightLen,
+  innerRightX + room1len,
+  oRightLen / 2 - moveBack,
+  transBack,
+  col1
+);
+const oFront1 = wall(
+  oFront1len,
+  1,
+  innerRightX + room1len - oFront1len / 2,
+  oRightLen - moveBack,
+  transBack,
+  col1
+);
+const oLeft1 = wall(
+  1,
+  oLeft1len,
+  innerLeftX - room2len - 1.5,
+  oLeft1Y + oLeft1len / 2,
+  transBack,
+  col2
+);
+const oFront2 = wall(
+  oFront2len + 3,
+  1,
+  innerLeftX - room2len - oFront2len / 2 - 3,
+  47.8 - 6,
+  transBack,
+  col2
+);
 const oBack = wall(oBackLen, 1, 27.5 / 2, -47, transBack, col2);
 
 const outerWall = new THREE.Group();
