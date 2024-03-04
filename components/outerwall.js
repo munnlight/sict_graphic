@@ -1,5 +1,5 @@
 import * as THREE from "three";
-//import { innerRightX, oLeft1len, oLeft1Y, oRightLen, xLinear, xRoomW, innerLeftX, rightDist } from "./innerwall";
+import { innerRightX, oLeft1len, oLeft1Y, oRightLen, xLinear, xRoomW, innerLeftX, rightDist } from "./innerwall";
 import { room1len, room2len } from "./rooms";
 
 // Хануудын урт

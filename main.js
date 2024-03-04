@@ -5,9 +5,11 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { innerWall } from "./components/innerwall";
 //import { outerWall } from "./components/outerwall";
 import { Rooms } from "./components/rooms";
-import { Stairs } from "./components/stairs";
+//import { Stairs } from "./components/stairs";
 import { animate } from "./components/animation";
 import {  floor1, floor2 } from "./components/floor";
+
+import { Rhajuu } from "./components/tamber";
 
 const fl1 = floor1;
 const fl2 = floor2;
@@ -15,6 +17,8 @@ const fl2 = floor2;
 scene.add(fl1);
 scene.add(fl2);
 
+const tamber = Rhajuu;
+scene.add(tamber);
 //const combinedRooms = CombinedRooms();
 //scene.add(combinedRooms);
 
