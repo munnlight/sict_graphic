@@ -1,24 +1,24 @@
 import "./style.css";
 import * as THREE from "three";
 import { scene } from "./components/outside";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { innerWall } from "./components/innerwall";
-//import { outerWall } from "./components/outerwall";
-import { Rooms } from "./components/rooms";
-//import { Stairs } from "./components/stairs";
+//import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
+import { outerWall } from "./components/outerwall";
 import { animate } from "./components/animation";
-import {  floor1, floor2 } from "./components/floor";
+import {  floor1, floor2, floor3 } from "./components/floor";
 
 import { Rhajuu } from "./components/tamber";
 
 const fl1 = floor1;
 const fl2 = floor2;
+const fl3 = floor3;
 
 scene.add(fl1);
 scene.add(fl2);
+scene.add(fl3);
 
 const tamber = Rhajuu;
-scene.add(tamber);
+//scene.add(tamber);
 //const combinedRooms = CombinedRooms();
 //scene.add(combinedRooms);
 
@@ -27,7 +27,7 @@ stairs.position.set(65.725, 51.85, 0.375);
 scene.add(stairs);
 
 const rooms = Rooms;
-scene.add(rooms);
+// scene.add(rooms);
 /*
 const door1 = loadGLTFModel(
   "./door(2).glb",

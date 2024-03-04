@@ -38,12 +38,21 @@ floor2.add(door2);
 floor2.position.z = 15;
 
 const floor1 = new THREE.Group();
+
 const fl1innerWall = inwall.clone();
+//65.725
 const fl1Stairs = Stairs(false);
 fl1Stairs.position.set(65.725, 51.85, 0.375);
 
 floor1.add(fl1innerWall);
 floor1.add(fl1Stairs);
 
-export{ floor1, floor2};
+const floor3 = new THREE.Group();
+
+const fl3innerWall = fl1innerWall.clone();
+floor3.position.z = 30;
+
+floor3.add(fl3innerWall);
+
+export{ floor1, floor2, floor3};
 

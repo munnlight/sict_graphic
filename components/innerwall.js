@@ -123,4 +123,19 @@ innerWall.add(doorR);
 innerWall.add(doorL);
 innerWall.add(stairL);
 
-export { box, innerWall, height, innerColor, leftDist, rightDist, innerRightX, innerLeftX, door_len };
+export {
+  box,
+  xLinear,
+  xRoomW,
+  innerWall,
+  height,
+  innerColor,
+  leftDist,
+  rightDist,
+  innerRightX,
+  innerLeftX,
+  door_len,
+  oRightLen,
+  oLeft1len,
+  oLeft1Y,
+};
