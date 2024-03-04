@@ -1,8 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
 import { scene } from "./components/outside";
-//import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-
 import { outerWall } from "./components/outerwall";
 import { Rooms } from "./components/rooms";
 import { table } from "./components/table";
