@@ -10,6 +10,7 @@ import { closet } from "./components/closet";
 import { animate } from "./components/animation";
 import { floorMesh , floor1, floor2, floor3} from "./components/floor";
 import { uud } from "./components/ambaar";
+import { jijuur, jijuur } from "./components/jijuur";
 import { loadGLTFModel } from "./components/door";
 
 const door1 = loadGLTFModel(
@@ -35,6 +36,9 @@ scene.add(floor);
 
 const rooms = Rooms;
 scene.add(rooms);
+
+const jijr = jijuur;
+scene.add(jijr);
 
 const tambars = tambar;
 scene.add(tambars);

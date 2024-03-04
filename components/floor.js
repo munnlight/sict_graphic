@@ -10,7 +10,7 @@ const corridor1wid = 2 + innerRightX - innerLeftX + room1len + room2len;
 const corridor2wid = 88.5;
 
 const corridor1len = 250;
-const corridor2len = 137;
+const corridor2len = 213;
 
 const floor2 = new THREE.Group();
 
@@ -45,7 +45,7 @@ floor2.position.z = 15;
 const floor1 = new THREE.Group();
 
 const fl1innerWall = inwall.clone();
-//65.725 x position 
+//65.725 x position
 const fl1Stairs = Stairs(false);
 fl1Stairs.position.set(65.725, 51.85, -0.37);
 
@@ -69,7 +69,7 @@ const flooring = (xpos, ypos, zpos, trns) => {
   const comp2 = new THREE.Mesh(geo2, mat);
 
   comp1.position.set(xpos, ypos, zpos);
-  comp2.position.set(-20, -2, zpos);
+  comp2.position.set(-58, -2, zpos);
 
   flooring.add(comp1);
   flooring.add(comp2);
@@ -78,11 +78,11 @@ const flooring = (xpos, ypos, zpos, trns) => {
 };
 
 
-const flooring1 = flooring((innerRightX + innerLeftX) / 2, 78, 0, 0.5);
+const flooring1 = flooring((innerRightX + innerLeftX) / 2, 78, 0, 1);
 floor1.add(flooring1);
-const flooring2 = flooring((innerRightX + innerLeftX) / 2, 78, height, 0.5);
+const flooring2 = flooring((innerRightX + innerLeftX) / 2, 78, height, 0.7);
 floor1.add(flooring2);
-const flooring3 = flooring((innerRightX + innerLeftX) / 2, 78, 2 * height, 1);
+const flooring3 = flooring((innerRightX + innerLeftX) / 2, 78, 2 * height, 0.7);
 floor1.add(flooring3);
 */
 
