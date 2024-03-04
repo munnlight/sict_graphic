@@ -4,18 +4,12 @@ import { scene } from "./components/outside";
 //import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 import { outerWall } from "./components/outerwall";
-<<<<<<< HEAD
 import { Rooms } from "./components/rooms";
-import { combinedStairs } from "./components/stairs";
 import { table } from "./components/table";
 import { chair } from "./components/chair";
 import { closet } from "./components/closet";
 import { animate } from "./components/animation";
-import { floor1, floor2 } from "./components/floor";
-=======
-import { animate } from "./components/animation";
-import {  floor1, floor2, floor3 } from "./components/floor";
->>>>>>> 1d8421d0f0a139cef1a9c55579e971314bf5349e
+import { floor1, floor2, floor3 } from "./components/floor";
 
 const fl1 = floor1;
 const fl2 = floor2;
