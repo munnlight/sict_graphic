@@ -8,12 +8,12 @@ import { chair } from "./components/chair";
 import { tambar } from "./components/tambar";
 import { closet } from "./components/closet";
 import { animate } from "./components/animation";
-import { floor1, floor2, floor3 } from "./components/floor";
+import { floorMesh , floor1, floor2, floor3} from "./components/floor";
 import { uud } from "./components/ambaar";
 import { loadGLTFModel } from "./components/door";
 
 const door1 = loadGLTFModel(
-  "./logo.glb",
+  "./door(2).glb",
   { x: -200, y: -171, z: 4.3 },
   { x: Math.PI / 2, y: Math.PI / 2 },
   { x: 3, y: 4, z: 4 }
@@ -28,6 +28,10 @@ const fl3 = floor3;
 scene.add(fl1);
 scene.add(fl2);
 scene.add(fl3);
+
+const floor = floorMesh;
+floor.
+scene.add(floor);
 
 const rooms = Rooms;
 scene.add(rooms);
