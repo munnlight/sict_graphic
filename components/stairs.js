@@ -7,9 +7,9 @@ const length = 6.8;
 
 // шатны бариул хийх функц
 const handle = (situation, ask, h, radius) => {                           // ask хувьсагч нь шатны бариулын зүүн барууныг асууна
- 
+  
   const len = Math.sqrt(Math.pow(widthOfEach * 10, 2) + Math.pow(heigth * 10, 2));   // бариулын урт
-
+  
   if (situation === true) {
 
     const column = new THREE.CylinderGeometry(radius, radius, h, 20, 20);
