@@ -83,7 +83,7 @@ outerWall.add(oFront2);
 outerWall.add(oBack);
 
 // Checker
-const oLeft2 = wall(1, 89, -89.125, -2, transBack, col2);
+const oLeft2 = wall(1, 89, -165.125, -2, transBack, col2);
 outerWall.add(oLeft2);
 
 export { outerWall };

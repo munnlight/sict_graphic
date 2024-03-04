@@ -56,9 +56,13 @@ const box = (x, y, posx, posy, trans, col) => {
 };
 
 // Хаалганы зайг хэмжих зориулалттай биет
-
-const doorR = box(1, door_len, innerRightX, right1_len + door_len / 2 - 6, wallTrans, GlassCol);
-
+const haalganiHana = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial({color: GlassCol,
+  wireframe: false,
+  transparent: true,
+  opacity: wallTrans,});
+const doorR = box(1, 5.05, innerRightX, right1_len + door_len / 2 - 6, wallTrans, GlassCol);
+doorR.position.z = 19;
 const doorL = box(
   1,
   door_len,
@@ -134,4 +138,5 @@ export {
   oRightLen,
   oLeft1len,
   oLeft1Y,
+  GlassCol,
 };

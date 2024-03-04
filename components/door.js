@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
 function loadGLTFModel(filePath, position, rotation, scale) {
     const haalga = new THREE.Group();
   
@@ -16,7 +17,7 @@ function loadGLTFModel(filePath, position, rotation, scale) {
           }
         });
   
-        console.log(model);
+        //console.log(model);
   
         if (rotation) {
           model.rotateX(rotation.x || 0);
