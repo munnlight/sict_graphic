@@ -117,7 +117,7 @@ innerWall.add(innerLeft3);
 
 //innerWall.add(doorR);
 //innerWall.add(doorL);
-innerWall.add(stairL);
+// innerWall.add(stairL);
 
 export {
   box,

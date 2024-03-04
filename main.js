@@ -14,6 +14,6 @@ scene.add(fl2);
 scene.add(fl3);
 
 const outwall = outerWall;
-scene.add(outwall);
+// scene.add(outwall);
 
 animate();

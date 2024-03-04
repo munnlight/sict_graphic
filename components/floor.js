@@ -21,7 +21,7 @@ floor2.add(inwall);
 
 
 const fl2Stairs = Stairs(true);
-fl2Stairs.position.set(65.725, 51.85, 0.375);
+fl2Stairs.position.set(65.725, 51.85, -0.37);
 floor2.add(fl2Stairs);
 
 const rooms = Rooms;
@@ -40,9 +40,9 @@ floor2.position.z = 15;
 const floor1 = new THREE.Group();
 
 const fl1innerWall = inwall.clone();
-//65.725
+//65.725 x position 
 const fl1Stairs = Stairs(false);
-fl1Stairs.position.set(65.725, 51.85, 0.375);
+fl1Stairs.position.set(65.725, 51.85, -0.37);
 
 floor1.add(fl1innerWall);
 floor1.add(fl1Stairs);
