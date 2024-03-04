@@ -73,3 +73,7 @@ Rooms.add(room2);
 // Rooms.add(checkerL);
 
 export { Rooms, rooms, room1len, room2len };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d8421d0f0a139cef1a9c55579e971314bf5349e
