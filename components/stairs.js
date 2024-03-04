@@ -153,8 +153,6 @@ function Stairs(ask) {
 
   }
 
-  const wall = rooms(28.75, length * 2, -14.35 / 2, -length * 1.5);
-
   const combinedStairs = new THREE.Group();       // шатыг бүрэн угсран буцаах объект
 
   combinedStairs.add(rightStairs);
@@ -167,9 +165,17 @@ function Stairs(ask) {
   combinedStairs.add(middleStep2);
   combinedStairs.add(upperStep1);
   combinedStairs.add(upperStep2);
-  combinedStairs.add(wall);
+  // combinedStairs.position.set(0,0,0.375);
 
-  return combinedStairs;
+  const wall = rooms(28.75, length * 2, -14.35 / 2, -length * 1.5);
+  wall.position.set(0,0,1.125);
+
+  const wallAndStairs = new THREE.Group();
+
+  wallAndStairs.add(combinedStairs);
+  wallAndStairs.add(wall);
+
+  return wallAndStairs;
 }
 
 export { Stairs };
