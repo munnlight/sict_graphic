@@ -10,7 +10,7 @@ document.body.appendChild(renderer.domElement);
 const axesHelper = new THREE.AxesHelper(130);
 scene.add(axesHelper);
 
-var HologGeo = new THREE.BoxGeometry(250, 500, 0);
+var HologGeo = new THREE.BoxGeometry(250, 500, -0.1);
 var HologMat = new THREE.MeshLambertMaterial({ color: 0x442840 });
 var Holog = new THREE.Mesh(HologGeo, HologMat);
 
