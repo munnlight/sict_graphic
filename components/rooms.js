@@ -1,5 +1,14 @@
 import * as THREE from "three";
-import { height, innerColor, leftDist, rightDist, innerLeftX, innerRightX, box, door_len } from "./innerwall";
+import {
+  height,
+  innerColor,
+  leftDist,
+  rightDist,
+  innerLeftX,
+  innerRightX,
+  box,
+  door_len,
+} from "./innerwall";
 
 // const heightImp = height;
 const coloR = innerColor;
@@ -38,10 +47,20 @@ const rooms = (length, dist, posx, posy) => {
 };
 
 // Өрөө 1-ийн хана
-const room1 = rooms(room1len, room1wid, innerRightX + 0.5 + room1len / 2, rightDist - room1right);
+const room1 = rooms(
+  room1len,
+  room1wid,
+  innerRightX + 0.5 + room1len / 2,
+  rightDist - room1right
+);
 
 // Өрөө 2-ын хана
-const room2 = rooms(room2len, room2wid, innerLeftX - 0.5 - room2len / 2, leftDist - room2left);
+const room2 = rooms(
+  room2len,
+  room2wid,
+  innerLeftX - 0.5 - room2len / 2,
+  leftDist - room2left
+);
 
 const Rooms = new THREE.Group();
 Rooms.add(room1);
