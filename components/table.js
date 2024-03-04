@@ -77,7 +77,7 @@ const tables = () => {
 
 const positionX = 71.5;
 const positionY = 150;
-const positionZ = 0;
+const positionZ = 15;
 const table = new THREE.Group();
 
 for (let i = 0; i < 4; i++) {
@@ -108,7 +108,7 @@ for (let i = 0; i < 2; i++) {
 for (let i = 0; i < 2; i++) {
   const t = tables();
   t.rotation.z = Math.PI / -2;
-  t.position.set(105.5 + 8.5 * i, 127, 0);
+  t.position.set(105.5 + 8.5 * i, 127, 15);
   table.add(t);
 }
 

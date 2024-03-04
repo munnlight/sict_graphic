@@ -39,7 +39,7 @@ const chairs = () => {
 
 const positionX = 74;
 const positionY = 152.1;
-const positionZ = 0;
+const positionZ = 15;
 const chair = new THREE.Group();
 
 for (let i = 0; i < 8; i++) {
@@ -59,7 +59,7 @@ for (let i = 0; i < 4; i++) {
 for (let i = 0; i < 2; i++) {
   const ch2 = chairs();
   ch2.rotation.z = Math.PI / -2;
-  ch2.position.set(105.5 + 8.5 * i, 129, 0);
+  ch2.position.set(105.5 + 8.5 * i, 129, 15);
   chair.add(ch2);
 }
 

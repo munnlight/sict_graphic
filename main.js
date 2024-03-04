@@ -5,6 +5,7 @@ import { outerWall } from "./components/outerwall";
 import { Rooms } from "./components/rooms";
 import { table } from "./components/table";
 import { chair } from "./components/chair";
+import { tambar } from "./components/tambar";
 import { closet } from "./components/closet";
 import { animate } from "./components/animation";
 import { floor1, floor2, floor3 } from "./components/floor";
@@ -17,12 +18,11 @@ scene.add(fl1);
 scene.add(fl2);
 scene.add(fl3);
 
-const stairs = combinedStairs;
-stairs.position.set(65.725, 51.85, 0.375);
-scene.add(stairs);
-
 const rooms = Rooms;
 scene.add(rooms);
+
+const tambars = tambar;
+scene.add(tambars);
 
 const tble = table;
 scene.add(tble);
@@ -32,15 +32,10 @@ scene.add(chr);
 
 const clost = closet;
 clost.rotation.z = Math.PI / 2;
-clost.position.set(0, 60, 0);
+clost.position.set(-127.3, 9.4, 0);
 scene.add(clost);
 
-const door2 = loadGLTFModel(
-  "./door(2).glb",
-  { x: 45, y: 90, z: 4.3 },
-  { x: Math.PI / 2, y: Math.PI / 2 },
-  { x: 4, y: 4, z: 4 }
-);
-scene.add(door2);
+const outwall = outerWall;
+scene.add(outwall);
 
 animate();
