@@ -71,7 +71,7 @@ const flooring = (xpos, ypos, zpos, trns) => {
   comp1.position.set(xpos, ypos, zpos);
   comp2.position.set(-58, -2, zpos);
 
-  flooring.add(comp1);
+  // flooring.add(comp1);
   flooring.add(comp2);
 
   return flooring;
