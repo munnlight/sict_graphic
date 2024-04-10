@@ -37,6 +37,7 @@ const rightDist = -xLinear + right1_len;
 
 // outerwall.js рүү дамжуулах хувьсагчид
 const oRightLen = right1_len + right2_len + door_len + 2 * xLinear + xRoomW;
+const startPointY = right1_len + right2_len + door_len - xLinear;
 const oLeft1len = left3_len + door_len + left2_len + stairGap;
 const oLeft1Y = -xLinear + leftGap + left1_len;
 // const oFront1len = room1len + innerRightX - innerLeftX + room2len;
@@ -57,20 +58,10 @@ const box = (x, y, posx, posy, trans, col) => {
 
 // Хаалганы зайг хэмжих зориулалттай биет
 const haalganiHana = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({color: GlassCol,
-  wireframe: false,
-  transparent: true,
-  opacity: wallTrans,});
+const material = new THREE.MeshBasicMaterial({ color: GlassCol, wireframe: false, transparent: true, opacity: wallTrans });
 const doorR = box(1, 5.05, innerRightX, right1_len + door_len / 2 - 6, wallTrans, GlassCol);
 doorR.position.z = 19;
-const doorL = box(
-  1,
-  door_len,
-  innerLeftX,
-  -xLinear + stairGap + leftGap + left1_len + left2_len + door_len / 2,
-  wallTrans,
-  GlassCol
-);
+const doorL = box(1, door_len, innerLeftX, -xLinear + stairGap + leftGap + left1_len + left2_len + door_len / 2, wallTrans, GlassCol);
 
 const stairL = box(1, stairGap, innerLeftX, leftGap - xLinear + left1_len + stairGap / 2, noTrans, col3);
 
@@ -81,33 +72,12 @@ const innerFront1 = box(129.75, 1, -24.25, 6.5, wallTrans, innerColor);
 const innerFront2 = box(25.1, 1, 53.325, 6.5, wallTrans, GlassCol);
 
 const innerRight1 = box(1, right1_len, innerRightX, right1_len / 2 - xLinear, wallTrans, innerColor);
-const innerRight2 = box(
-  1,
-  right2_len,
-  innerRightX,
-  -xLinear + right1_len + door_len + right2_len / 2,
-  wallTrans,
-  innerColor
-);
+const innerRight2 = box(1, right2_len, innerRightX, -xLinear + right1_len + door_len + right2_len / 2, wallTrans, innerColor);
 
 const innerLeft1 = box(1, left1_len, innerLeftX, leftGap - xLinear + left1_len / 2, wallTrans, GlassCol);
 // const innerLeft2 = box(1, 7.2, innerLeftX, 52.825, wallTrans, innerColor);
-const innerLeft2 = box(
-  1,
-  left2_len,
-  innerLeftX,
-  -xLinear + leftGap + left1_len + stairGap + left2_len / 2,
-  wallTrans,
-  innerColor
-);
-const innerLeft3 = box(
-  1,
-  left3_len,
-  innerLeftX,
-  -xLinear + leftGap + left1_len + stairGap + left2_len + door_len + left3_len / 2,
-  wallTrans,
-  innerColor
-);
+const innerLeft2 = box(1, left2_len, innerLeftX, -xLinear + leftGap + left1_len + stairGap + left2_len / 2, wallTrans, innerColor);
+const innerLeft3 = box(1, left3_len, innerLeftX, -xLinear + leftGap + left1_len + stairGap + left2_len + door_len + left3_len / 2, wallTrans, innerColor);
 
 const innerWall = new THREE.Group();
 innerWall.add(innerBack);
@@ -123,20 +93,4 @@ innerWall.add(innerLeft3);
 //innerWall.add(doorL);
 // innerWall.add(stairL);
 
-export {
-  box,
-  xLinear,
-  xRoomW,
-  innerWall,
-  height,
-  innerColor,
-  leftDist,
-  rightDist,
-  innerRightX,
-  innerLeftX,
-  door_len,
-  oRightLen,
-  oLeft1len,
-  oLeft1Y,
-  GlassCol,
-};
+export { box, xLinear, xRoomW, innerWall, height, innerColor, leftDist, rightDist, innerRightX, innerLeftX, door_len, oRightLen, oLeft1len, oLeft1Y, GlassCol, startPointY };
