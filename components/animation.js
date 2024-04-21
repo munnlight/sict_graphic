@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import { scene, camera, renderer } from "./outside";
 
-camera.position.set(-170, 80, 90);
-camera.up = new THREE.Vector3(0, 0, 1);
+// camera.position.set(-170, 80, 90);
+// camera.up = new THREE.Vector3(0, 0, 1);
 
 const keyboard = {};
 document.addEventListener("keydown", (event) => {
@@ -12,56 +12,56 @@ document.addEventListener("keyup", (event) => {
   keyboard[event.key] = false;
 });
 
-const radian = 180 / Math.PI;
+
+  var vx,
+  vy,
+  alp = 0,
+  urt = 0,
+  ondor = 0,
+  d = 2;
+
+  document.onkeydown = function (evt) {
+  switch (evt.keyCode) {
+      case 37: // left arrow key
+          alp -= 0.05;
+          break;
+      case 39: // right arrow key
+          alp += 0.05;
+          break;
+      case 38: // up arrow key
+          camera.position.x += d * Math.sin(alp);
+          camera.position.y += d * Math.cos(alp);
+          break;
+      case 40: // down arrow key
+          camera.position.x -= d * Math.sin(alp);
+          camera.position.y -= d * Math.cos(alp);
+          break;
+      case 87: // W key
+          camera.position.x += d * Math.sin(alp);
+          camera.position.y += d * Math.cos(alp);
+          camera.position.z += 5;
+          break;
+      case 83: // S key
+          camera.position.x -= d * Math.sin(alp);
+          camera.position.y -= d * Math.cos(alp);
+          camera.position.z -= 5;
+          break;
+  }
+
+  vx = camera.position.x + d * Math.sin(alp);
+  vy = camera.position.y + d * Math.cos(alp);
+  camera.lookAt(new THREE.Vector3(vx, vy, camera.position.z - 1));
+  };
 
 camera.lookAt(scene.position);
 function animate() {
-  requestAnimationFrame(animate);
-
-  // if (keyboard["ArrowUp"]) {
-  //   camera.position.y += camera.rotation.x * Math.cos(camera.rotation.y);
-  //   camera.position.x += camera.rotation.x * Math.sin(camera.rotation.y);
-  // }
-  // if (keyboard["ArrowDown"]) {
-  //   camera.position.y -= camera.rotation.x * Math.cos(camera.rotation.y);
-  //   camera.position.x -= camera.rotation.x * Math.sin(camera.rotation.y);
-  // }
-  // if (keyboard["ArrowLeft"]) {
-  //   camera.rotateY(Math.PI / 180);
-  // }
-  // if (keyboard["ArrowRight"]) {
-  //   camera.rotateY(-Math.PI / 180);
-  // }
-  // if (keyboard["w"]) {
-  //   camera.position.z += 1;
-  // }
-  // if (keyboard["s"]) {
-  //   camera.position.z -= 1;
-  // }
-
-  if (keyboard["ArrowUp"]) {
-    camera.position.z -= 4;
-  }
-  if (keyboard["ArrowDown"]) {
-    camera.position.z += 4;
-  }
-  if (keyboard["ArrowLeft"]) {
-    camera.position.x -= 4;
-  }
-  if (keyboard["ArrowRight"]) {
-    camera.position.x += 4;
-  }
-  if (keyboard["w"]) {
-    camera.position.y -= 4;
-  }
-  if (keyboard["s"]) {
-    camera.position.y += 4;
-  }
-
-  camera.lookAt(scene.position);
-
   renderer.render(scene, camera);
+  requestAnimationFrame(animate);
 }
+
+camera.position.set(10, 0, 5);
+camera.lookAt(new THREE.Vector3(10, 5, 5));
+camera.up = new THREE.Vector3(0, 0, 1);
 
 animate();
 
