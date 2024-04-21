@@ -48,7 +48,7 @@ const fl3innerWall = fl1innerWall.clone();
 floor3.position.z = 30;
 
 floor3.add(fl3innerWall);
-
+/*
 const flooring = (xpos, ypos, zpos, trns) => {
   const flooring = new THREE.Group();
   const mat = new THREE.MeshBasicMaterial({ color: 0xa1662f, transparent: true, opacity: trns });
@@ -61,11 +61,12 @@ const flooring = (xpos, ypos, zpos, trns) => {
   comp1.position.set(xpos, ypos, zpos);
   comp2.position.set(-58, -2, zpos);
 
-  flooring.add(comp1);
+  // flooring.add(comp1);
   flooring.add(comp2);
 
   return flooring;
 };
+
 
 const flooring1 = flooring((innerRightX + innerLeftX) / 2, 78, 0, 1);
 floor1.add(flooring1);
@@ -73,5 +74,29 @@ const flooring2 = flooring((innerRightX + innerLeftX) / 2, 78, height, 0.7);
 floor1.add(flooring2);
 const flooring3 = flooring((innerRightX + innerLeftX) / 2, 78, 2 * height, 1);
 floor1.add(flooring3);
+*/
 
-export { floor1, floor2, floor3 };
+const ShapeFloor = new THREE.Shape();
+ShapeFloor.moveTo(-164.5,-46.25);
+ShapeFloor.lineTo(-164.5,42.25);
+ShapeFloor.lineTo(48.5,42.25);
+ShapeFloor.lineTo(43.9075, 203);
+ShapeFloor.lineTo(118.3745, 203);
+ShapeFloor.lineTo(118.3745, -47 );
+// ShapeFloor.lineTo(43.9075, 42.25 );
+ShapeFloor.lineTo(48.5,-46.25);
+
+
+
+var floorGeometry = new THREE.ShapeGeometry(ShapeFloor);
+var floorMaterial = new THREE.MeshBasicMaterial({ color: 0xa1662f });
+var floorMesh = new THREE.Mesh(floorGeometry, floorMaterial);
+
+const hole = new THREE.Path();
+hole.moveTo(0,0);
+hole.lineTo(0,50);
+hole.lineTo(50,50);
+hole.lineTo(50,0);
+
+
+export {floorMesh, floor1, floor2, floor3 };

@@ -8,16 +8,15 @@ import { chair } from "./components/chair";
 import { tambar } from "./components/tambar";
 import { closet } from "./components/closet";
 import { animate } from "./components/animation";
-import { floor1, floor2, floor3 } from "./components/floor";
+import { floorMesh, floor1, floor2, floor3 } from "./components/floor";
 import { uud } from "./components/ambaar";
+// import { jijuur, jijuur } from "./components/jijuur";
 import { loadGLTFModel } from "./components/door";
 import { array } from "./display input/drawer";
 import { leftDist, startPointY } from "./components/innerwall";
 // import * as fs from "fs";
 
-// const points = array;
-
-const door1 = loadGLTFModel("./logo.glb", { x: -200, y: -171, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 3, y: 4, z: 4 });
+const door1 = loadGLTFModel("./door(2).glb", { x: -200, y: -171, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 3, y: 4, z: 4 });
 door1.rotateZ(Math.PI);
 scene.add(door1);
 
@@ -28,6 +27,9 @@ const fl3 = floor3;
 scene.add(fl1);
 scene.add(fl2);
 scene.add(fl3);
+
+const floor = floorMesh;
+scene.add(floor);
 
 const rooms = Rooms;
 scene.add(rooms);
@@ -44,6 +46,7 @@ scene.add(chr);
 const clost = closet;
 clost.rotation.z = Math.PI / 2;
 clost.position.set(-127.3, 9.4, 0);
+clost.position.set(-127.3, 9.4, 50);
 scene.add(clost);
 
 const outwall = outerWall;
