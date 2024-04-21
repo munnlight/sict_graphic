@@ -14,12 +14,7 @@ const corridor2len = 213;
 
 const floor2 = new THREE.Group();
 
-const door1 = loadGLTFModel(
-  "./door(2).glb",
-  { x: 48, y: 152.9, z: 4.3 },
-  { x: Math.PI / 2, y: Math.PI / 2 },
-  { x: 4, y: 4, z: 4 }
-);
+const door1 = loadGLTFModel("./door(2).glb", { x: 48, y: 152.9, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 4, y: 4, z: 4 });
 floor2.add(door1);
 
 const inwall = innerWall;
@@ -32,12 +27,7 @@ floor2.add(fl2Stairs);
 const rooms = Rooms;
 floor2.add(rooms);
 
-const door2 = loadGLTFModel(
-  "./door(2).glb",
-  { x: 63, y: 113.5, z: 4.3 },
-  { x: Math.PI / 2, y: Math.PI / 2 },
-  { x: 4, y: 4, z: 4 }
-);
+const door2 = loadGLTFModel("./door(2).glb", { x: 63, y: 113.5, z: 4.3 }, { x: Math.PI / 2, y: Math.PI / 2 }, { x: 4, y: 4, z: 4 });
 
 floor2.add(door2);
 floor2.position.z = 15;
@@ -81,7 +71,7 @@ const flooring1 = flooring((innerRightX + innerLeftX) / 2, 78, 0, 1);
 floor1.add(flooring1);
 const flooring2 = flooring((innerRightX + innerLeftX) / 2, 78, height, 0.7);
 floor1.add(flooring2);
-const flooring3 = flooring((innerRightX + innerLeftX) / 2, 78, 2 * height, 0.7);
+const flooring3 = flooring((innerRightX + innerLeftX) / 2, 78, 2 * height, 1);
 floor1.add(flooring3);
 
 export { floor1, floor2, floor3 };

@@ -56,19 +56,23 @@ scene.add(ambaar);
 const points = array;
 let counter = 0;
 
-const mat = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+const mat = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const geo = new THREE.SphereGeometry(0.3);
+const geot = new THREE.SphereGeometry(30);
 
 function drawPoints() {
-  const posx = points[3 * counter] * 5 + 80.625;
-  const posy = points[3 * counter + 1] * 5 + startPointY;
-  const posz = points[3 * counter + 2] * 5 + 31;
+  const g = new THREE.Group();
+  const posx = points[9 * counter] * 5 + 97.625;
+  const posy = points[9 * counter + 1] * -5 + 39.3;
+  const posz = points[9 * counter + 2] * 5 + 30.5;
   console.log(posx, posy, posz);
   const element = new THREE.Mesh(geo, mat);
   element.position.set(posx, posy, posz);
-  scene.add(element);
+  g.add(element);
+  g.rotation.z = Math.PI / 11;
+  scene.add(g);
   counter++;
 }
 
-setInterval(drawPoints, 4);
+setInterval(drawPoints, 1);
 animate();

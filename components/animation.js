@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { scene, camera, renderer } from "./outside";
 
-camera.position.set(-170, 80, 90);
+camera.position.set(100, 0, 190);
 camera.up = new THREE.Vector3(0, 0, 1);
 
 const keyboard = {};

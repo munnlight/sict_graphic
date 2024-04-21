@@ -8,7 +8,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const axesHelper = new THREE.AxesHelper(130);
-scene.add(axesHelper);
+// scene.add(axesHelper);
 
 var HologGeo = new THREE.BoxGeometry(350, 500, -0.1);
 var HologMat = new THREE.MeshLambertMaterial({ color: 0x442840 });
