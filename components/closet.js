@@ -1,4 +1,5 @@
 import * as THREE from "three";
+// import { texture } from "three/examples/jsm/nodes/Nodes.js";
 
 const box = (x, y, z, col, position) => {
   const geometry = new THREE.BoxGeometry(x, y, z);
@@ -11,8 +12,17 @@ const box = (x, y, z, col, position) => {
   return cube;
 };
 
-const hanaPos = new THREE.Vector3(0, 0, 7.5);
-const hana = box(0, 24.1, 15, 0x6e4100, hanaPos);
+const load = new THREE.TextureLoader();
+const text = load.load("./sictImg.jpg");
+text.colorSpace = THREE.SRGBColorSpace;
+
+const geoHana = new THREE.BoxGeometry(0, 24.1, 15);
+const matHana = new THREE.MeshPhongMaterial({
+  color: 0xff9390,
+  map: text,
+});
+const Hana = new THREE.Mesh(geoHana, matHana);
+Hana.position.set(0, 0, 7.5);
 
 const boxDoodPos1 = new THREE.Vector3(1.5, 9.775, 1.75);
 const boxDood1 = box(3, 4.55, 3.5, 0x3c2503, boxDoodPos1);
@@ -225,41 +235,14 @@ gol1.position.set(1.6, 10, 6.5);
 const gol2 = new Operants().trophy3(0xffb404);
 gol2.position.set(1.6, -10, 6.5);
 
-// Define the function to load textures
-const loadTextures = () => {
-  const closet = new THREE.Group();
+// const closet = loadTextures();
 
-  const textureLoader = new THREE.TextureLoader();
-
-  // Load the first texture
-  textureLoader.load("./sictImg.jpg", function (texture1) {
-    const material1 = new THREE.MeshBasicMaterial({ map: texture1 });
-    const planeGeometry1 = new THREE.PlaneGeometry(2, 2);
-    const mesh1 = new THREE.Mesh(planeGeometry1, material1);
-    mesh1.position.z = 20;
-    closet.add(mesh1);
-  });
-
-  // Load the second texture
-  textureLoader.load("images.png", function (texture2) {
-    const material2 = new THREE.MeshBasicMaterial({ map: texture2 });
-    const planeGeometry2 = new THREE.PlaneGeometry(2, 2);
-    const mesh2 = new THREE.Mesh(planeGeometry2, material2);
-    mesh2.position.z = 20;
-    closet.add(mesh2);
-  });
-
-  return closet;
-};
-
-const closet = loadTextures();
-
-//const closet = new THREE.Group();
+const closet = new THREE.Group();
 closet.add(trophy1);
 closet.add(trophy2);
 closet.add(trophy3);
 closet.add(trophy4);
-closet.add(hana);
+closet.add(Hana);
 closet.add(boxDood1);
 closet.add(boxDood2);
 closet.add(havtgaiSuuri);
@@ -282,17 +265,5 @@ closet.add(orgomjlol1);
 closet.add(orgomjlol2);
 closet.add(orgomjlol3);
 closet.add(orgomjlol4);
-
-// const loader = new THREE.TextureLoader();
-// loader.load("./images.png", function (texture) {
-//   const material = new THREE.MeshBasicMaterial({ map: texture });
-
-//   const planeGeometry = new THREE.PlaneGeometry(2, 2);
-
-//   const mesh = new THREE.Mesh(planeGeometry, material);
-//   mesh.position.z = 20;
-
-//   closet.add(mesh);
-// });
 
 export { closet };

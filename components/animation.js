@@ -12,7 +12,6 @@ document.addEventListener("keyup", (event) => {
   keyboard[event.key] = false;
 });
 
-
   var vx,
   vy,
   alp = 0,

@@ -31,7 +31,6 @@ scene.add(fl2);
 scene.add(fl3);
 
 const floor = floorMesh;
-floor.
 scene.add(floor);
 
 const rooms = Rooms;
@@ -50,6 +49,7 @@ scene.add(chr);
 const clost = closet;
 clost.rotation.z = Math.PI / 2;
 clost.position.set(-127.3, 9.4, 0);
+clost.position.set(-127.3, 9.4, 50);
 scene.add(clost);
 
 const outwall = outerWall;
