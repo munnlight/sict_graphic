@@ -8,7 +8,7 @@ import { chair } from "./components/chair";
 import { tambar } from "./components/tambar";
 import { closet } from "./components/closet";
 import { animate } from "./components/animation";
-import { floorMesh , floor1, floor2, floor3} from "./components/floor";
+import { floorMesh, floor1, floor2, floor3 } from "./components/floor";
 import { uud } from "./components/ambaar";
 // import { jijuur, jijuur } from "./components/jijuur";
 import { loadGLTFModel } from "./components/door";
@@ -36,7 +36,6 @@ scene.add(floor);
 const rooms = Rooms;
 scene.add(rooms);
 
-
 const tambars = tambar;
 scene.add(tambars);
 
@@ -49,7 +48,7 @@ scene.add(chr);
 const clost = closet;
 clost.rotation.z = Math.PI / 2;
 clost.position.set(-127.3, 9.4, 0);
-clost.position.set(-127.3, 9.4, 50);
+// clost.position.set(-127.3, 9.4, 50);
 scene.add(clost);
 
 const outwall = outerWall;

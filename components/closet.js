@@ -1,7 +1,6 @@
 import * as THREE from "three";
-// import { texture } from "three/examples/jsm/nodes/Nodes.js";
 
-const box = (x, y, z, col, position) => {
+function box(x, y, z, col, position) {
   const geometry = new THREE.BoxGeometry(x, y, z);
   const material = new THREE.MeshMatcapMaterial({
     color: col,
@@ -10,17 +9,14 @@ const box = (x, y, z, col, position) => {
   const cube = new THREE.Mesh(geometry, material);
   cube.position.copy(position);
   return cube;
-};
+}
 
-const load = new THREE.TextureLoader();
-const text = load.load("./sictImg.jpg");
-text.colorSpace = THREE.SRGBColorSpace;
+const loader = new THREE.TextureLoader();
+const texture = loader.load("./sictImg.jpg");
+// texture.colorSpace = THREE.SRGBColorSpace;
 
 const geoHana = new THREE.BoxGeometry(0, 24.1, 15);
-const matHana = new THREE.MeshPhongMaterial({
-  color: 0xff9390,
-  map: text,
-});
+const matHana = new THREE.MeshBasicMaterial({ map: texture });
 const Hana = new THREE.Mesh(geoHana, matHana);
 Hana.position.set(0, 0, 7.5);
 
